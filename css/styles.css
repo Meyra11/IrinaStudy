@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Raleway black';
+  src: url('../fonts/Raleway-VariableFont_wght.ttf');
+
+}
+
+@font-face {
+  font-family: 'Playfair Display black';
+  src: url('../fonts/PlayfairDisplay-VariableFont_wght.ttf');
+
+}
+
+
+.news-others {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.news-others > div {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px;
+  align-items: center;
+}
+
+.news-others p {
+  margin: 5%;
+  font-family: 'Raleway black', sans-serif;
+  font-size: 10px;
+}
+
+.news-others h3 {
+  margin: 5%;
+  font-family: 'Playfair Display black', sans-serif;
+  font-size: 14px;
+}
+
+.news-others > div > span {
+  width: calc(100% - 127px);
+  padding-left: 16px;
+}
+
+.news-new {
+  background-image: url(../img/Hotel-11.jpg);
+
+}
+
+.news-reviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.img_100 {
+  width: 90%;
+  margin: 5%;
+}
+
+.news-review p {
+  margin: 5%;
+  font-family: 'Raleway black', sans-serif;
+}
+
+.news-review h2 {
+  margin: 5%;
+  font-family: 'Playfair Display black', sans-serif;
+}

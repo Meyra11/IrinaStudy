@@ -2,70 +2,97 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Новости</title>
   </head>
   <body>
     <h1>НОВОСТИ КУЛЬТУРЫ</h1>
-    <div class="news-new">
+    <section class="news-new">
       <a href="#"><img src="img/Rectangle 2.svg"/></a>
-      <p>ПОДВОДНЫЙ ОТЕЛЬ</p>
-      <p>
+      <p class="news-new-title">ПОДВОДНЫЙ ОТЕЛЬ</p>
+      <p class="news-new-text">
         Как известно, Дубай – город контрастов. Самые революционные и фантастические мечты архитекторов
         способен воплотить в жизнь этот мегаполис, построенный на нефти и за счет нефти
       </p>
-      <a href="#"><img src="img/Hotel-11.jpg"/></a>
-    </div>
-    <div class="news-culture">
+    </section>
+    <section class="news-culture">
       <h2>НОВОСТИ</h2>
       <p>Новости культуры России и всего мира</p>
       <p>
         В минувшие выходные в Москве на фестивале «Оберег» вручили первую премию Russian World Music Awards
       </p>
       <a href="#"><img src="img/birds.svg"/></a>
-    </div>
-    <div class="news-others">
+    </section>
+
+    <section class="news-others">
       <div class="news-other">
-        <a href="#"><img src="img/other_0.svg"/></a>
-        <p>Открытие нового памятника Евгению Леонову</p>
-        <p>10 сентября в 15:00 был открыт памятник писателю</p>
+        <div>
+          <img img class="img_100" src="img/other_0.jpg"/>
+        </div>
+        <span>
+          <h3>Открытие нового памятника Евгению Леонову</h3>
+          <p>10 сентября в 15:00 был открыт памятник писателю</p>
+        </span>
       </div>
       <div class="news-other">
-        <a href="#"><img src="img/other_1.svg"/></a>
-        <p>Беседы с писателями</p>
-        <p>Русские писатели беседуют о важности искусства</p>
+        <div>
+          <img img class="img_100" src="img/other_1.jpg"/>
+        </div>
+        <span>
+          <h3>Беседы с писателями</h3>
+          <p>Русские писатели беседуют о важности искусства</p>
+        </span>
       </div>
       <div class="news-other">
-        <a href="#"><img src="img/other_2.svg"/></a>
-        <p>День и ночь св. Патрика: встреча старых друзей</p>
-        <p>Не Джойсом единым живет Ирландия!</p>
+        <div>
+          <img img class="img_100" src="img/other_2.jpg"/>
+        </div>
+        <span>
+          <h3>День и ночь св. Патрика: встреча старых друзей</h3>
+          <p>Не Джойсом единым живет Ирландия!</p>
+        </span>
       </div>
-    </div>
-    <div class="news-reviews">
-      <h2>ОБЗОРЫ</h2>
+    </section>
+
+    <section class="news-reviews">
+
       <div class="news-review">
-        <a href="#"><img src="img/reviews_0.svg"/></a>
-        <p class="news-review-header">«Шальные годы» Монпарнаса</p>
-        <p>
-          В Музее изобразительных искусств имени Пушкина с 29 сентября по 29 ноября
-          проходит выставка «Шальные годы Монпарнаса»
-        </p>
+        <h2>ОБЗОРЫ</h2>
+        <div>
+          <img class="img_100" src="img/reviews_0.jpg"/>
+        </div>
+        <span>
+          <h2>«Шальные годы» Монпарнаса</h2>
+          <p>
+            В Музее изобразительных искусств имени Пушкина с 29 сентября по 29 ноября
+            проходит выставка «Шальные годы Монпарнаса»
+          </p>
+        </span>
       </div>
       <div class="news-review">
-        <a href="#"><img src="img/reviews_1.svg"/></a>
-        <p class="news-review-header">Анатомия за 30 секунд</p>
+        <div>
+          <img class="img_100" src="img/reviews_1.png"/>
+        </div>
+        <h2>Анатомия за 30 секунд</h2>
         <p>
           Сейчас, когда мир открыт нараспашку для человека и его познавательных изысканий,
           интерес к научно-популярной литературе заметно вырос
         </p>
       </div>
       <div class="news-review">
-        <a href="#"><img src="img/reviews_2.svg"/></a>
-        <p class="news-review-header">Русские балетные сезоны</p>
+        <div>
+          <img class="img_100" src="img/reviews_2.jpg"/>
+        </div>
+
+        <h2>Русские балетные сезоны</h2>
         <p>В Новом Иерусалиме стартовал необычный культурно-развлекательный спектакль, который покажут в новом театре</p>
       </div>
       <div class="news-review">
-        <a href="#"><img src="img/reviews_3.svg"/></a>
-        <p class="news-review-header">Сферические чудаки</p>
+        <div>
+          <img class="img_100" src="img/reviews_3.jpg"/>
+        </div>
+
+        <h2>Сферические чудаки</h2>
         <p>Корреспондентам «Культурного обозревателя» посчастливилось побывать в театре «Сфера» на премьере спектакля «Чудаки и зануды»</p>
         <div>
           <button name="button_left">
@@ -76,8 +103,8 @@
           </button>
         </div>
       </div>
-    </div>
-    <div class="news-shorts">
+    </section>
+    <section class="news-shorts">
       <div class="news-short">
         <a href="#"><img src="img/short_0.jpg"/></a>
         <p class="news-short-header">Ох, уж этот балет</p>
@@ -100,19 +127,19 @@
         </button>
       </div>
       <div class="news-short">
-        <a href="#"><img src="img/short_3.svg"/></a>
+        <a href="#"><img src="img/short_3.jpg"/></a>
         <p class="news-short-header">НЕОБЫЧНАЯ ФОТОСЕССИЯ</p>
         <button name="button_look">
           СМОТРЕТЬ
         </button>
       </div>
       <div class="news-short">
-        <a href="#"><img src="img/short_4.svg"/></a>
+        <a href="#"><img src="img/short_4.jpg"/></a>
         <p class="news-short-header">Выставка птиц</p>
         <button name="button_look">
           СМОТРЕТЬ
         </button>
       </div>
-    </div>
+    </section>
   </body>
 </html>
