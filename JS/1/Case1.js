@@ -36,4 +36,4 @@ switch (N) {
 
 console.log("Число N = " + N + " - " + dayStr);
 
-//time 25 мин
+//time 5 мин
