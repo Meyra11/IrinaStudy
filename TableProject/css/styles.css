@@ -19,12 +19,12 @@
 
  #employees-table {
   margin: 20px;
-  border: 1px solid #a0a0a0;
+  border: 2px solid #a0a0a0;
   border-collapse: collapse;
 
  }
 
  .employees-th > th, .employees-row > td {
    padding: 5px;
-   border: 1px solid #a0a0a0;
+   border: 2px solid #a0a0a0;
  }

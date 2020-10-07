@@ -12,10 +12,10 @@ function addRow()
 
     // Создаем строку таблицы и добавляем ее
     let row = document.createElement("TR");
+    row.classList.add("employees-row");
     tbody.appendChild(row);
 
-    // Создаем ячейки в вышесозданной строке
-    // и добавляем тх
+    // Создаем ячейки в вышесозданной строке и добавляем
     const td1 = document.createElement("TD");
     const td2 = document.createElement("TD");
     const td3 = document.createElement("TD");
