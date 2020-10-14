@@ -88,7 +88,7 @@ const handleSortIncrease = (e, field) => {
             return 0
         }
     }))
-    e.stopPropagation();
+    //e.stopPropagation();
     // TODO изменить изображения
 }
 
@@ -103,7 +103,7 @@ const handleSortDecrease = (e, field) => {
             return 0
         }
     }))
-    e.stopPropagation();
+    //e.stopPropagation();
     // TODO изменить изображения
 }
 
