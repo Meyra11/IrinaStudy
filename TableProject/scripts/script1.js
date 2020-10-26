@@ -3,9 +3,46 @@
 let mainData = [];
 let sort = 0;
 
+function addCookie(name, value, options) {
+    options = options || {}
+
+    let expires = options.expires
+
+    if (typeof expires === "number" && expires) {
+        const d = new Date()
+        d.setTime(d.getTime() + expires * 1000)
+        expires = options.expires = d
+    }
+    if (expires && expires.toUTCString) {
+        options.expires = expires.toUTCString()
+    }
+
+    value = encodeURIComponent(value)
+
+    let updatedCookie = name + "=" + value
+
+    for (var propName in options) {
+        updatedCookie += "; " + propName
+        var propValue = options[propName]
+        if (propValue !== true) {
+            updatedCookie += "=" + propValue
+        }
+    }
+    //console.log(updatedCookie)
+    document.cookie = updatedCookie
+}
+
+function getCookie(name) {
+    const matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ))
+    return matches ? decodeURIComponent(matches[1]) : undefined
+}
+
 const renderTable = (tableData) => {
     const tbody = document.getElementById("employees-table").getElementsByTagName('TBODY')[0];
     tbody.innerHTML = ""
+    window.localStorage.setItem("table", JSON.stringify(tableData))
 
     tableData.map((item) => {
 
@@ -133,10 +170,15 @@ function loadPage() {
     const btn = document.querySelector(".add-btn");
     btn.onclick = addRow;
     btn.style.backgroundColor = "#3333"
+    const oldTable = window.localStorage.getItem("table")
 
-    fetch('https://gist.githubusercontent.com/Greyewi/c339c8b4f785a27471b42d46a5d076ab/raw/2e984b50e5e0065d70d1656abc7b69173570f063/Irina_table.json')
-      .then(response => response.json())
-      .then(result => renderTable(mainData = result))
+    if(oldTable){
+        renderTable(mainData = JSON.parse(oldTable))
+    } else {
+        fetch('https://gist.githubusercontent.com/Greyewi/c339c8b4f785a27471b42d46a5d076ab/raw/2e984b50e5e0065d70d1656abc7b69173570f063/Irina_table.json')
+          .then(response => response.json())
+          .then(result => renderTable(mainData = result))
+    }
 
     const rowTitles = document.querySelectorAll(".employees-th-item")
 
