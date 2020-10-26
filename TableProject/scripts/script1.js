@@ -13,9 +13,22 @@ const renderTable = (tableData) => {
         row.classList.add("employees-row");
         tbody.appendChild(row);
 
-        for(let key in item)
-        {
-          (row.appendChild(document.createElement("TD"))).innerHTML = item[key];
+        for(let key in item) {
+            if(key === "isChecked"){
+                const checkbox = document.createElement('input')
+                checkbox.setAttribute("type", "checkbox")
+                row.appendChild(document.createElement("TD")).appendChild(checkbox);
+            } else if(key === "id"){
+                row.appendChild(document.createElement("TD")).innerHTML = item[key];
+            } else {
+                const input = document.createElement('input')
+                input.setAttribute("type", "text")
+                input.setAttribute("disabled", "true")
+                input.setAttribute("class", "disabled")
+                input.setAttribute("value", item[key])
+
+                row.appendChild(document.createElement("TD")).appendChild(input);
+            }
         }
 
         document.querySelector(".img-up").hidden = sort <= 0;
@@ -70,14 +83,14 @@ function addRow()
 
 }
 
-const handleSort = (e, field) => {
+const handleSort = (field) => {
     if(sort <= 0) {
-      handleSortIncrease(e, field)
+      handleSortIncrease(field)
     }
-    else handleSortDecrease(e, field);
+    else handleSortDecrease(field);
 }
 
-const handleSortIncrease = (e, field) => {
+const handleSortIncrease = (field) => {
     sort = 1;
     renderTable(mainData.sort((a, b) => {
         if(a[field] < b[field]) {
@@ -92,7 +105,7 @@ const handleSortIncrease = (e, field) => {
     // TODO изменить изображения
 }
 
-const handleSortDecrease = (e, field) => {
+const handleSortDecrease = (field) => {
     sort = -1;
     renderTable(mainData.sort((a, b) => {
         if(a[field] < b[field]) {
@@ -107,13 +120,12 @@ const handleSortDecrease = (e, field) => {
     // TODO изменить изображения
 }
 
-const filterData = (searchStr) => {
+const filterData = () => {
     renderTable(mainData.filter(function filterInputData(item) {
-        for(let key in item)
-        {
-            if(String(item[key]).toLowerCase().indexOf(document.getElementById(searchStr).value) >= 0) return true;
+        for(let key in item) {
+            if(item[key].toLowerCase().indexOf(document.getElementById("search").value) >= 0) return true;
         }
-        return item.name.toLowerCase().indexOf(document.getElementById(searchStr).value) >= 0;
+        return item.name.toLowerCase().indexOf(document.getElementById("search").value) >= 0;
     }))
 }
 
@@ -122,10 +134,13 @@ function loadPage() {
     btn.onclick = addRow;
     btn.style.backgroundColor = "#3333"
 
-    fetch('https://gist.githubusercontent.com/Greyewi/c339c8b4f785a27471b42d46a5d076ab/raw/f236135f1d7cf57dd71aca6d5d92301ae46f2142/Irina_table.json')
+    fetch('https://gist.githubusercontent.com/Greyewi/c339c8b4f785a27471b42d46a5d076ab/raw/2e984b50e5e0065d70d1656abc7b69173570f063/Irina_table.json')
       .then(response => response.json())
       .then(result => renderTable(mainData = result))
 
-    //document.querySelector(".employees-th-item").addEventListener("click", handleSort(event, 'id'));
+    const rowTitles = document.querySelectorAll(".employees-th-item")
 
+    for(let i = 0; i < rowTitles.length; i++){
+        rowTitles[i].addEventListener("click", event => handleSort(event.target.getAttribute('name')));
+    }
 }

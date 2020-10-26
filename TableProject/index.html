@@ -25,7 +25,7 @@
     <table id="employees-table">
       <thead>
         <tr class="employees-th">
-          <th class="employees-th-item" onclick="handleSort(event, 'id')">ID <img src="./img/sort-up.svg" alt="Up" class="img-up" />
+          <th class="employees-th-item" name="id">ID <img src="./img/sort-up.svg" alt="Up" class="img-up" />
             <img src="./img/sort-down.svg" alt="Down" class="img-down" />
           <!--
              <th class="employees-th-item" onclick="handleSort(event, 'id')">ID <img src="./img/sort-up.svg" alt="Up" class="img-up" onclick="handleSortDecrease(event, 'id')"/>
@@ -33,10 +33,11 @@
           </th>
           -->
           </th>
-          <th class="employees-th-item">ФИО</th>
-          <th class="employees-th-item">Должность</th>
-          <th class="employees-th-item">Пол</th>
-          <th class="employees-th-item">Возраст</th>
+          <th class="employees-th-item" name="name">ФИО</th>
+          <th class="employees-th-item" name="position">Должность</th>
+          <th class="employees-th-item" name="gender">Пол</th>
+          <th class="employees-th-item" name="age">Возраст</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -52,7 +53,7 @@
       </tfoot>
     </table>
 
-    <input type="text" id="search" name="search" placeholder="" oninput="filterData('search')"/>
+    <input type="text" id="search" name="search" placeholder="" oninput="filterData()"/>
     <button class="search-btn">Найти</button>
 
   </body>

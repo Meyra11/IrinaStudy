@@ -35,3 +35,10 @@
  {
    height: 12px;
  }
+
+ input.disabled {
+     border: 0;
+     color:#000;
+     background: transparent;
+     cursor: text;
+ }
